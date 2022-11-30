@@ -1,0 +1,80 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "fullName": "Mario Ayerve Estrella",
+      "email": "mayerve@gmail.com",
+      "purchaseDescr": "ADIDAS Shoes",
+      "colors": [
+        {
+          "idColor": 1,
+          "name": "red"
+        },
+        {
+          "idColor": 2,
+          "name": "blue"
+        },
+        {
+          "idColor": 3,
+          "name": "yellow"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "fullName": "Karina Macias Acosta",
+      "email": "kma@gmail.com",
+      "purchaseDescr": "Dress GC",
+      "colors": [
+        {
+          "idColor": 1,
+          "name": "red"
+        },
+        {
+          "idColor": 2,
+          "name": "blue"
+        },
+        {
+          "idColor": 3,
+          "name": "yellow"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "fullName": "Prueba 1",
+      "email": "test@gmail.com",
+      "purchaseDescr": "Test XX",
+      "colors": [
+        {
+          "idColor": 1,
+          "name": "red"
+        },
+        {
+          "idColor": 2,
+          "name": "blue"
+        }
+      ]
+    },
+    {
+      "fullName": "Andres Castro Arreaga",
+      "email": "ac_12@gmail.com",
+      "purchaseDescr": "Tennis Jordan",
+      "colors": [
+        {
+          "idColor": 1,
+          "name": "red"
+        },
+        {
+          "idColor": 2,
+          "name": "green"
+        },
+        {
+          "idColor": 3,
+          "name": "yellow"
+        }
+      ],
+      "id": 4
+    }
+  ]
+}

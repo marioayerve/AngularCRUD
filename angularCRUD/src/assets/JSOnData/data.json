@@ -1,0 +1,16 @@
+[
+    {
+        "id":1,
+        "fullName":"Mario Ayerve Estrella",
+        "email":"mayerve@gmail.com",
+        "purchaseDescr":"ADIDAS Shoes",
+        "colors": ["blue","red","white"]        
+    },
+    {
+        "id":2,
+        "fullName":"Karina Macias Acosta",
+        "email":"kma@gmail.com",
+        "purchaseDescr":"Dress GC",
+        "colors": ["black","blue","white"] 
+    }
+]

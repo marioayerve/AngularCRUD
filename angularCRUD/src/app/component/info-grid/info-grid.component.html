@@ -1,0 +1,141 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Customers Purchase</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addCustomer" type="submit">Add new!</button>
+          </div>
+        </div>
+    </nav>
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Customer Full Name</th>        
+        <th scope="col">Email</th>
+        <th scope="col">Purchase Description</th>
+        <th scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of custList">
+        <th>{{customer.id}}</th>
+        <td>{{customer.fullName}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.purchaseDescr}}</td>
+        <td>
+            <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editCustomer" (click)="editCustomer(customer)">Edit</button>
+            <button type="button" class="btn btn-outline-danger" (click)="deleteCustomer(customer)" >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+    <!-- Add Customer -->
+    <div class="modal fade" id="addCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add your Purchase</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+                <form [formGroup]="customDetail" (ngSubmit)="addCustomer()">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                        <input type="text" formControlName="fullName" class="form-control" id="fullName">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Purchase Description</label>
+                        <input type="text" formControlName="purchaseDescr" class="form-control" id="purchaseDescr">
+                    </div>
+
+                    <div class="mb-3">
+                      <label >Purchase Description</label>
+                      <label for="exampleInputEmail1" class="form-label">Purchase Description</label>
+                      
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="addCustomer()">ADD!</button>
+                    </div>
+    
+                  </form>
+                
+            </div>
+    
+          </div>
+        </div>
+    </div>
+
+
+
+  <!--  Edit Customer -->
+  <div class="modal fade" id="editCustomer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Customer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <form [formGroup]="customDetail">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Full Name</label>
+                    <input type="text" formControlName="fullName" class="form-control" id="fullName">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Purchase Description</label>
+                    <input type="text" formControlName="purchaseDescr" class="form-control" id="purchaseDescr">
+                </div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Select Color</label>
+                  <select name="my-select" class="form-control" #mySelect (change)="selectChange(mySelect.value)">
+                      <option class="option" [value]="col.id" *ngFor="let col of colorList">
+                          {{col.name}}
+                      </option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  Selected: {{selectedValue}}
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-success" (click)="updateCustomer()">Update</button>
+                </div>
+
+              </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
